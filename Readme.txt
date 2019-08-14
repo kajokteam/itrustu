@@ -1,1 +1,1 @@
-kuayyyy rai sus sss
+kuayyyy rai sus sss tipp
