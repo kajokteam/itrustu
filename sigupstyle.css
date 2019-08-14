@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: montserrat;
+    font-family: 'Anton', sans-serif;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+  }
+  
+  body{
+    min-height: 150vh;
+    background-image: linear-gradient(180deg,#3498db,#0a2b63);
+  }
+  
+  h1{
+      margin-left: 5%;
+      margin-top: 20px;
+      letter-spacing: 4px;
+      color: #2d66c5;
+  }
+  p{ 
+    color: #adadad;
+          
+  }
+  textarea{
+      width: 100%;
+      padding: 10px;
+      line-height: 1.5;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+  }
+  
+  .register{
+    width: auto;
+    background: #eeeeee;
+    height: 1200px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .txtb{
+    
+    width: auto;
+    border-bottom: 2px solid #adadad;
+    position: relative;
+    height: auto;
+    margin: 30px 5% 30px 5%;
+  }
+  
+  .txtb input{
+    font-size: 15px;
+    color: #333;
+    border: none;
+    width: 720px;
+    outline: none;
+    background: none;
+    padding: 0 5px;
+    height: 40px;
+  }
+  
+  .txtb span::before{
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: .5s;
+  }
+  
+  .txtb span::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(120deg,#3498db,#8e44ad);
+    transition: .5s;
+  }
+  
+  .focus + span::before{
+    top: -5px;
+  }
+  .focus + span::after{
+    width: 100%;
+  }
+  
+  .logbtn{
+    display: block;
+    width: 90%;
+    height: 50px;
+    border: 25px;
+    border-radius: 25px;
+    background: linear-gradient(120deg,#3498db,#8e44ad,#3498db);
+    background-size: 200%;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+      margin-left: 5%;
+      margin-right: 5%;
+  }
+  
+  .logbtn:hover{
+    background-position: right;
+  }
+  
+  .bottom-text{
+    margin-top: 60px;
+    text-align: center;
+    font-size: 13px;
+  }
