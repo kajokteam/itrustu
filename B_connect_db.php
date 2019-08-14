@@ -6,6 +6,6 @@
     $dbname = "admin_boomtest";
     $connect = mysqli_connect($hostname,$user,$pass,$dbname) or die("Cannot connect");
 */
-$mysqli = new mysqli("localhost","root","","admin_boomtest");
+$connect = new mysqli("202.44.12.163","admin_boomtest","t94yGB2nKs","admin_boomtest");
 
 ?>

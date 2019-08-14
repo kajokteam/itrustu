@@ -17,7 +17,7 @@
 
     if($pass == $cpass)
 {
-    $sql = "INSERT INTO `signup_tb`(`user`, `pass`, `fname`, `lname`, `id`, `faculty`, `department`, `tel`, `email`, `facebook`, `line`, `address`) VALUES ('$user','$pass','$fname','$lname','$id','$faculty','$department','$tel','$email','$fb','$lineid','$address')";
+    $sql = "INSERT INTO `signup_tb`(`user`, `pass`, `fname`, `lname`, `std_id`, `faculty`, `department`, `tel`, `email`, `facebook`, `line`, `address`) VALUES ('$user','$pass','$fname','$lname','$id','$faculty','$department','$tel','$email','$fb','$lineid','$address')";
     $result = mysqli_query($connect,$sql);
   
 if($result)

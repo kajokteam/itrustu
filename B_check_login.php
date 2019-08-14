@@ -4,7 +4,7 @@
 
 	/*$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);*/
 
-	$strSQL = "SELECT * FROM `signup` WHERE user = '".mysqli_real_escape_string($connect,$_POST['editUsername'])."' 
+	$strSQL = "SELECT * FROM `signup_tb` WHERE user = '".mysqli_real_escape_string($connect,$_POST['editUsername'])."' 
 	and pass = '".mysqli_real_escape_string($connect,$_POST['editPassword'])."'";
 	$objQuery = mysqli_query($connect,$strSQL);
 	$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
@@ -21,11 +21,11 @@
 			
 			if($objResult["status"] == "admin")
 			{
-				header("location:admin_page.php");
+				header("location:F_admin_mainpage.php");
 			}
 			else
 			{
-				header("location:user_page.php");
+				header("location:F_user_mainpage.php");
 			}
 		
 	}
