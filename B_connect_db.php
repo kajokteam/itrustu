@@ -1,10 +1,11 @@
 <?php
  
-    $hostname = "localhost";
-    $user  = "root";
-    $pass = "";
-    $dbname = "register&login_test";
+ /*   $hostname = "202.44.12.163";
+    $user  = "admin_boomtest";
+    $pass = " t94yGB2nKs";
+    $dbname = "admin_boomtest";
     $connect = mysqli_connect($hostname,$user,$pass,$dbname) or die("Cannot connect");
-    echo "Connected to server<br><br>";
+*/
+$mysqli = new mysqli("localhost","root","","admin_boomtest");
 
 ?>
