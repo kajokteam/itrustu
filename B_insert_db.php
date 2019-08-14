@@ -1,6 +1,6 @@
 <?php
 
-    require "./connect_db.php";
+    require "./B_connect_db.php";
     $user = $_POST['editUsername'];
     $pass = $_POST['editPassword'];
     $cpass = $_POST['editConfirmPassword'];
@@ -32,7 +32,7 @@ if($result)
 }else
  {
     echo "pass != cpass <br>";
-    echo "<a href = './signup.php'> back </a>";
+    echo "<a href = './F_signup.php'> back </a>";
  }
     
             

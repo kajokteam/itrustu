@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require "./connect_db.php";
+	require "./B_connect_db.php";
 
 	/*$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);*/
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <?php
-    require "./connect_db.php";
+    require "./B_connect_db.php";
     $sql = " SELECT * FROM `signup`";
     $result = mysqli_query($connect,$sql);
   ?>
@@ -15,10 +15,8 @@
   </head>
     
   <body>
-      <form class="register" method="POST" action="insert_db.php" >
+      <form class="register" method="POST" action="B_insert_db.php" >
           <h1>Registers</h1> 
-     
-      
       <div class="txtb">
           <input type="text" name="editUsername"  >
           <span data-placeholder="Username"></span>
