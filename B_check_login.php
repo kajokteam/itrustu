@@ -4,8 +4,7 @@
 
 	/*$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);*/
 
-	$strSQL = "SELECT * FROM `signup_tb` WHERE user = '".mysqli_real_escape_string($connect,$_POST['editUsername'])."' 
-	and pass = '".mysqli_real_escape_string($connect,$_POST['editPassword'])."'";
+	$strSQL = "SELECT * FROM `signup_tb` WHERE user = '".mysqli_real_escape_string($connect,$_POST['editUsername'])."' and pass = '".mysqli_real_escape_string($connect,$_POST['editPassword'])."'";
 	$objQuery = mysqli_query($connect,$strSQL);
 	$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 	if(!$objResult)
