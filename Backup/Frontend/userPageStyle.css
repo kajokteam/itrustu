@@ -13,6 +13,7 @@ body{
     display: flex;
     margin-left: 5%;
     margin-top: 5%;
+    justify-content: center;
 }
 
 @media (max-width: 9000px) {
@@ -26,14 +27,14 @@ body{
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     cursor: pointer;
-    height: 350px;
-    margin: 0px;
+    height: 300px;
+    margin: 10px;
     padding: 0 20px;
     position: relative;
     -webkit-tap-highlight-color: rgba(0,0,0,0.025);
     text-align: center;
     transition: height 1000ms;
-    width: 350px;
+    width: 300px;
 }
 
 @media (max-width: 9000px) {
@@ -45,13 +46,13 @@ body{
 
 
 .col-lg-4.expanded  .card{
-    height: 530px;
+    height: 600px;
 }
 
 
 .imgThumb{
     margin-top: 10px;
-    transform: translateY(10px);
+    transform: translateY(-10px);
     transition: transform 1000ms;
     width: 200px;
     height: 200px;
@@ -65,24 +66,28 @@ body{
 
 .tier{
     margin-top: 20px;
-    transform: translateY(10px);
+    transform: translateY(-10px);
     transition: transform 1000ms;
+    color: #2d66c5;
 
 }
 
 .col-lg-4.expanded .user-card .tier{
     transform: translateY(0);
+    color: #2d66c5;
 }
 
 .studentID{
     margin-top: 20px;
-    transform: translateY(0px);
+    transform: translateY(-10px);
     transition: transform 1000ms;
+    color: #2d66c5;
 
 }
 
 .col-lg-4.expanded .user-card .studentID{
-    transform: translateY(210px);
+    transform: translateY(280px);
+    color: #2d66c5;
 }
 
 .text1 {
@@ -98,10 +103,12 @@ body{
 .text-content {
     transform: translateY(-200px);
     transition: transform 1000ms;
+    color: #2d66c5;
 }
 
 .col-lg-4.expanded .text-content {
     transform: translateY(0px);
+    color: #2d66c5;
 }
 
 .coords{
@@ -113,7 +120,27 @@ body{
 }
 
 .main{
-    height: 100%;
     background: #fff;
-    left: 50%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    cursor: pointer;
+    height: 100%;
+    margin: 10px;
+    padding: 20px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.025);
+    justify-content: center;
+    width: 90%;
+}
+
+.bottom-text{
+    color: #123269;
+    top: 30px;
+    margin-left: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    font-size: 25px;
+}
+
+.button-text{
+    color: #123269
 }
