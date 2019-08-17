@@ -21,7 +21,7 @@
                 <div class="tier">
                     Untier
                 </div>
-                <img class="imgThumb" src="black.jpg">
+                <img class="imgThumb" src="./src/img/black.jpg">
                 <div class="studentID">
                     99999999999
                 </div>
