@@ -69,12 +69,16 @@ body{
     transform: translateY(-10px);
     transition: transform 1000ms;
     color: #2d66c5;
+    text-transform: uppercase;
+    font-weight: bold;
 
 }
 
 .col-lg-4.expanded .user-card .tier{
     transform: translateY(0);
     color: #2d66c5;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .studentID{
@@ -82,12 +86,16 @@ body{
     transform: translateY(-10px);
     transition: transform 1000ms;
     color: #2d66c5;
+    text-transform: uppercase;
+    font-weight: bold;
 
 }
 
 .col-lg-4.expanded .user-card .studentID{
     transform: translateY(280px);
     color: #2d66c5;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .text1 {
@@ -143,4 +151,8 @@ body{
 
 .button-text{
     color: #123269
+}
+
+a:link, a:visited{
+    color: #2d66c5;
 }
