@@ -153,6 +153,13 @@ body{
     color: #123269
 }
 
-a:link, a:visited{
-    color: #2d66c5;
+.top-text{
+    left: 60%;
+    margin-left: 90%;
+    margin-top: -5%;
+    font-weight: bold;
+}
+
+.link{
+    color: black;
 }
