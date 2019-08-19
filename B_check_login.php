@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	require "./B_connect_db.php";
+	$_SESSION["Login"] = FALSE;
 
 	/*$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);*/
 
@@ -15,6 +16,8 @@
 	{
 			
 		$_SESSION["status"] = $objResult["status"];
+		$_SESSION["Login"] = TRUE;
+		$_SESSION["user"] = $objResult["user"];
 
 			session_write_close();
 			

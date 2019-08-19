@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<?php
+    require "./B_connect_db.php";
+    session_start();
+    if(!$_SESSION["login"]===TRUE) {header("location:index.html");}
+?>
 <html>
     <head>
         <meta charset="utf-8">
