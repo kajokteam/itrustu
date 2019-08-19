@@ -1,46 +1,43 @@
 <?php
 
     require "./B_connect_db.php";
-    $user = $_POST['editUsername'];
-    $pass = $_POST['editPassword'];
-    $cpass = $_POST['editConfirmPassword'];
-    $fname = $_POST['editName'];
-    $lname = $_POST['editLastname'];
-    $id = $_POST['editStudentID'];
-    $faculty = $_POST['editFaculty'];
-    $department = $_POST['editDepartment'];
-    $tel    =   $_POST['editTel'];
-    $email  =   $_POST['editEmail'];
-    $fb     =   $_POST['editFacebook'];
-    $lineid =   $_POST['editLineID'];
-    $address =  $_POST['editAddress'];
+    $user = mysqli_real_escape_string($connect,$_POST['editUsername']);
+    $pass = mysqli_real_escape_string($connect,$_POST['editPassword']);
+    $cpass = mysqli_real_escape_string($connect,$_POST['editConfirmPassword']);
+    $fname = mysqli_real_escape_string($connect,$_POST['editName']);
+    $lname = mysqli_real_escape_string($connect,$_POST['editLastname']);
+    $id = mysqli_real_escape_string($connect,$_POST['editStudentID']);
+    $faculty = mysqli_real_escape_string($connect,$_POST['editFaculty']);
+    $department = mysqli_real_escape_string($connect,$_POST['editDepartment']);
+    $tel    =   mysqli_real_escape_string($connect,$_POST['editTel']);
+    $email  =   mysqli_real_escape_string($connect,$_POST['editEmail']);
+    $fb     =   mysqli_real_escape_string($connect,$_POST['editFacebook']);
+    $lineid =   mysqli_real_escape_string($connect,$_POST['editLineID']);
+    $address =  mysqli_real_escape_string($connect,$_POST['editAddress']);
 
-    $check = " SELECT * FROM `signup_tb` WHERE user = $user ";
+    $check = " SELECT * FROM `signup_tb` WHERE user = $user;";
     $result_check = mysqli_query($connect,$check);
 
-    if(!$result_check)
-    {
+    if(!$result_check){
         echo "ชื่อซ้ำ";
         echo "<a href = './F_register.php'> back </a>";
     }
-    else
-    { if($pass == $cpass)
+    elseif($pass == $cpass)
     {
-    $sql = "INSERT INTO `signup_tb`(`user`, `pass`, `fname`, `lname`, `std_id`, `faculty`, `department`, `tel`, `email`, `facebook`, `line`, `address`) VALUES ('$user','$pass','$fname','$lname','$id','$faculty','$department','$tel','$email','$fb','$lineid','$address')";
-    $result = mysqli_query($connect,$sql);
-        if($result)
-        {
-            echo "success <br>";
-            echo "<a href = './index.html'> back </a>";
-        }else
-            {
-                echo "error : ".mysqli_error($connect).$result;
-            }
+        $sql = "INSERT INTO `signup_tb`(`user`, `pass`, `fname`, `lname`, `std_id`, `faculty`, `department`, `tel`, `email`, `facebook`, `line`, `address`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);";
+        $stmt = mysqli_stmt_init($connect);
+        if(!mysqli_stmt_prepare($stmt,$sql)){
+            echo "SQL failed";
+        }else{
+            mysqli_stmt_bind_param($stmt,"ssssisssssss",$user,$pass,$fname,$lname,$id,$faculty,$department,$tel,$email,$fb,$lineid,$address);
+            mysqli_stmt_execute($stmt);
+            echo "Sign up complete";
+            header("location:index.html");
+        }   
 
-    }else
-    {
-        echo "pass != cpass <br>";
-        echo "<a href = './F_register.php'> back </a>";
-    }}
+    }else{
+        echo "Password not match";
+        header("Location:F_Register.php?alert=passnotmatch");
+    }
     
 ?>

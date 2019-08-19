@@ -3,7 +3,7 @@
 <?php
     require "./B_connect_db.php";
     session_start();
-    if(!$_SESSION["login"]===TRUE) {header("location:index.html");}
+    if($_SESSION["Login"]===FALSE) {header("Location:index.html");}
 ?>
 <html>
     <head>
@@ -29,6 +29,7 @@
                 </div>
                 <img class="imgThumb" src="./src/img/black.jpg">
                 <div class="studentID">
+                <a href="index.html"><input type="button" value="logout" action ="B_logout.php"></a>
                     99999999999
                 </div>
             </div>
