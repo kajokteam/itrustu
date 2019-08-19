@@ -18,18 +18,18 @@
       <form class="register" method="POST" action="B_insert_db.php" >
           <h1>Registers</h1> 
       <div class="txtb">
-          <input type="text" name="editUsername"  >
-          <span data-placeholder="Username"></span>
+          <input type="text" name="editUsername"  required>
+          <span data-placeholder="Username" ></span>
         </div>
 
         <div class="txtb">
-          <input type="password" name="editPassword">
-          <span data-placeholder="Password"></span>
+          <input type="password" name="editPassword" required>
+          <span data-placeholder="Password" ></span>
         </div>
           
           <div class="txtb">
-          <input type="password" name="editConfirmPassword">
-          <span data-placeholder="Confirm Password"></span>
+          <input type="password" name="editConfirmPassword" required>
+          <span data-placeholder="Confirm Password" ></span>
         </div>
           
           <div class="txtb">

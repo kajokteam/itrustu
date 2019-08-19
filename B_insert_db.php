@@ -1,6 +1,7 @@
 <?php
 
     require "./B_connect_db.php";
+
     $user = mysqli_real_escape_string($connect,$_POST['editUsername']);
     $pass = mysqli_real_escape_string($connect,$_POST['editPassword']);
     $cpass = mysqli_real_escape_string($connect,$_POST['editConfirmPassword']);
@@ -15,12 +16,11 @@
     $lineid =   mysqli_real_escape_string($connect,$_POST['editLineID']);
     $address =  mysqli_real_escape_string($connect,$_POST['editAddress']);
 
-    $check = " SELECT * FROM `signup_tb` WHERE user = $user;";
+    $check = "SELECT user FROM `signup_tb` WHERE user = '$user';";
     $result_check = mysqli_query($connect,$check);
 
-    if(!$result_check){
-        echo "ชื่อซ้ำ";
-        echo "<a href = './F_register.php'> back </a>";
+    if($result_check!=NULL){
+        header("Location: F_Register.php?alert=userused");
     }
     elseif($pass == $cpass)
     {
