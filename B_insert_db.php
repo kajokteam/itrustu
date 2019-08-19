@@ -20,9 +20,9 @@
     $result_check = mysqli_query($connect,$check);
     $row_check = mysqli_fetch_array($result_check,MYSQLI_ASSOC);
 
-    if($row_check[0]!=NULL){
-        echo gettype($row_check)."<br>".var_dump($row_check);
-        //header("Location: F_Register.php?alert=userused");
+    if($row_check!=NULL){
+        //echo gettype($row_check)."<br>".var_dump($row_check);
+        header("Location: F_Register.php?alert=userused");
     }
     elseif($pass == $cpass)
     {
