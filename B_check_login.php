@@ -3,11 +3,18 @@
 	require "./B_connect_db.php";
 	$_SESSION["Login"] = FALSE;
 
-	$strSQL = "SELECT * FROM `signup_tb` WHERE user = '".mysqli_real_escape_string($connect,$_POST['editUsername'])."' and pass = '".mysqli_real_escape_string($connect,$_POST['editPassword'])."'";
+	$passinput = $_POST['editPassword'];
+
+	$strSQL = "SELECT pass FROM `signup_tb` WHERE user = '".mysqli_real_escape_string($connect,$_POST['editUsername'])."'"; //and pass = '".mysqli_real_escape_string($connect,$_POST['editPassword'])."'
 	$objQuery = mysqli_query($connect,$strSQL);
 	$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 
-	if(!$objResult){
+	$passnotmatch = !password_verify($passinput,$objResult['pass']);
+	/*echo var_dump($objQuery)."<hr>";
+	echo var_dump($passmatch);*/
+
+
+	if($passnotmatch){
 		echo "Username and Password Incorrect!";
 		header("location: index.html?alert=unamepassincorrect");
 	}
