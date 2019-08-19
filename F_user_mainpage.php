@@ -3,10 +3,20 @@
 <?php
     require "./B_connect_db.php";
     session_start();
-    if($_SESSION["Login"]===FALSE) {header("Location:index.html");}
+    if(!isset($_SESSION["Login"])) {header("Location:index.html");}
 ?>
 <html>
     <head>
+    <script type="text/javascript">
+            function noBack(){
+                window.history.forward()
+            }
+             
+            noBack();
+            window.onload = noBack;
+            window.onpageshow = function(evt) { if (evt.persisted) noBack() }
+            window.onunload = function() { void (0) }
+        </script>
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
