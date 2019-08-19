@@ -14,6 +14,8 @@ body{
     margin-left: 5%;
     margin-top: 5%;
     justify-content: center;
+    left: 50%;
+    top: 50%;
 }
 
 @media (max-width: 9000px) {
@@ -154,12 +156,17 @@ body{
 }
 
 .top-text{
-    left: 60%;
-    margin-left: 90%;
     margin-top: -5%;
     font-weight: bold;
+    padding-right: 2%;
+    padding-bottom: 2%;
 }
 
 .link{
-    color: black;
+    color: white;
+    float: right;
+}
+
+.frame{
+    padding: 8%;
 }
